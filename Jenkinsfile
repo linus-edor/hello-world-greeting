@@ -19,8 +19,7 @@ junit '**/target/failsafe-reports/TEST-*.xml'
 archive 'target/*.jar'
 }
 stage ('Publish'){
-def server = Artifactory.server 'Default Artifactory
-Server'
+def server = Artifactory.server 'Default Artifactory Server'
 def uploadSpec = """{
 "files": [
 {
