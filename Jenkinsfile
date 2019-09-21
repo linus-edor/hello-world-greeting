@@ -8,7 +8,7 @@ junit '**/target/surefire-reports/TEST-*.xml'
 archive 'target/*.jar'
 }
 stage('Static Code Analysis'){
-sh "mvn clean verify sonar:sonar -Dsonar.host.url='http://172.17.0.1:9000' -Dsonar.projectName='example-project' -Dsonar.projectKey='example-project' -Dsonar.projectVersion=$BUILD_NUMBER"
+sh "mvn clean verify sonar:sonar -Dsonar.host.url='http://172.17.0.1:9000' -Dsonar.projectName='example-project' -Dsonar.projectKey='example-project' -Dsonar.projectVersion=$BUILD_NUMBER;"
 }
 stage ('Integration Test'){
 sh 'mvn clean verify -Dsurefire.skip=true';
